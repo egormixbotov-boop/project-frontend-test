@@ -1,0 +1,206 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Killsoft - Инновационные AI решения">
+    <title>Killsoft - Инновационные AI Решения</title>
+    <link rel="stylesheet" href="{% static 'landing/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Фоновые декоративные элементы -->
+    <div class="bg-shapes">
+        <div class="bg-circle circle-1"></div>
+        <div class="bg-circle circle-2"></div>
+        <div class="bg-circle circle-3"></div>
+        <div class="bg-rect rect-1"></div>
+        <div class="bg-rect rect-2"></div>
+    </div>
+
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <div class="logo-square"></div>
+                    <span class="logo-text">killsoft</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#about" class="nav-link">О нас</a></li>
+                    <li><a href="#services" class="nav-link">Услуги</a></li>
+                    <li><a href="#advantages" class="nav-link">Преимущества</a></li>
+                </ul>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-wrapper">
+                <!-- Левая часть - визуал с роботом -->
+                <div class="hero-visual">
+                    <div class="robot-container">
+                        <div class="robot-figure">
+                            <!-- Голова робота -->
+                            <div class="robot-head">
+                                <div class="robot-face">
+                                    <div class="robot-eye eye-left"></div>
+                                    <div class="robot-eye eye-right"></div>
+                                </div>
+                            </div>
+                            <!-- Тело робота -->
+                            <div class="robot-body">
+                                <div class="robot-circuit circuit-1"></div>
+                                <div class="robot-circuit circuit-2"></div>
+                                <div class="robot-circuit circuit-3"></div>
+                            </div>
+                            <!-- Руки робота -->
+                            <div class="robot-arm arm-left">
+                                <div class="robot-circuit circuit-arm"></div>
+                            </div>
+                            <div class="robot-arm arm-right">
+                                <div class="robot-circuit circuit-arm"></div>
+                            </div>
+                        </div>
+                        <!-- Неоновые эффекты вокруг робота -->
+                        <div class="glow-effect glow-1"></div>
+                        <div class="glow-effect glow-2"></div>
+                    </div>
+                </div>
+
+                <!-- Правая часть - текст и кнопка -->
+                <div class="hero-content">
+                    <h1 class="hero-title">ИННОВАЦИОННЫЕ AI РЕШЕНИЯ</h1>
+                    <p class="hero-subtitle">
+                        Комплексные решения для вашего бизнеса с использованием искусственного интеллекта.
+                        Автоматизация процессов, внедрение нейросетей и передовых технологий.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция О нас -->
+    <section id="about" class="section section-about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">О нас</h2>
+            </div>
+            <div class="section-content">
+                <div class="content-text">
+                    <p class="text-large">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <p>
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, 
+                        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Услуги -->
+    <section id="services" class="section section-services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Услуги</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card glass-card">
+                    <h3 class="service-title">Услуга 1</h3>
+                    <p class="service-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation.
+                    </p>
+                </div>
+                <div class="service-card glass-card">
+                    <h3 class="service-title">Услуга 2</h3>
+                    <p class="service-description">
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident.
+                    </p>
+                </div>
+                <div class="service-card glass-card">
+                    <h3 class="service-title">Услуга 3</h3>
+                    <p class="service-description">
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+                        totam rem aperiam, eaque ipsa quae ab illo inventore.
+                    </p>
+                </div>
+                <div class="service-card glass-card">
+                    <h3 class="service-title">Услуга 4</h3>
+                    <p class="service-description">
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos 
+                        qui ratione voluptatem sequi nesciunt.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Преимущества -->
+    <section id="advantages" class="section section-advantages">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Преимущества</h2>
+            </div>
+            <div class="advantages-list">
+                <div class="advantage-item glass-card">
+                    <div class="advantage-number">01</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">Преимущество 1</h3>
+                        <p class="advantage-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+                <div class="advantage-item glass-card">
+                    <div class="advantage-number">02</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">Преимущество 2</h3>
+                        <p class="advantage-description">
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </div>
+                <div class="advantage-item glass-card">
+                    <div class="advantage-number">03</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">Преимущество 3</h3>
+                        <p class="advantage-description">
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                    </div>
+                </div>
+                <div class="advantage-item glass-card">
+                    <div class="advantage-number">04</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">Преимущество 4</h3>
+                        <p class="advantage-description">
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static 'landing/js/main.js' %}"></script>
+</body>
+</html>
