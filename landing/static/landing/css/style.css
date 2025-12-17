@@ -619,10 +619,6 @@ body {
     background-clip: text;
 }
 
-.section-content {
-    max-width: 900px;
-    margin: 0 auto;
-}
 
 .content-text {
     color: var(--text-secondary);
@@ -643,6 +639,94 @@ body {
 /* Секция О нас */
 .section-about {
     background: rgba(0, 0, 0, 0.3);
+}
+
+.team-block {
+    margin-bottom: 56px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+    transition: var(--transition-normal);
+}
+
+.team-block:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.team-block:hover {
+    padding-left: 20px;
+}
+
+.team-block-header {
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.team-role {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+    position: relative;
+    padding-left: 0;
+    transition: var(--transition-normal);
+}
+
+.team-block:hover .team-role {
+    padding-left: 12px;
+}
+
+.team-role::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    transition: var(--transition-normal);
+    opacity: 0;
+}
+
+.team-block:hover .team-role::before {
+    width: 8px;
+    opacity: 1;
+}
+
+.team-name {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+    background: var(--gradient-text-cyan);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.team-block-content {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.team-block-content p {
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+}
+
+.team-block-content p:last-child {
+    margin-bottom: 0;
 }
 
 /* Секция Услуги */
@@ -1124,6 +1208,24 @@ body {
         font-size: 2rem;
     }
 
+    .team-block {
+        margin-bottom: 32px;
+        padding-bottom: 28px;
+    }
+
+    .team-block:hover {
+        padding-left: 0;
+    }
+
+    .team-name {
+        font-size: 1.4rem;
+    }
+
+    .team-block-content p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
     .services-grid {
         flex-direction: column;
         gap: 20px;
@@ -1187,6 +1289,23 @@ body {
 
     .text-large {
         font-size: 1rem !important;
+    }
+
+    .team-block {
+        margin-bottom: 40px;
+        padding-bottom: 36px;
+    }
+
+    .team-block:hover {
+        padding-left: 0;
+    }
+
+    .team-name {
+        font-size: 1.6rem;
+    }
+
+    .team-block-content p {
+        font-size: 1rem;
     }
 }
 
