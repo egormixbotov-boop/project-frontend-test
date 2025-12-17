@@ -98,6 +98,48 @@ window.addEventListener('load', () => {
     }
 });
 
+// Аккордеон для карточек услуг
+function initServiceCards() {
+    const cards = document.querySelectorAll('.service-card');
+    if (!cards.length) return;
+
+    cards.forEach(card => {
+        const content = card.querySelector('.service-content');
+        if (!content) {
+            return;
+        }
+
+        card.addEventListener('click', (e) => {
+            // не реагируем на клики по ссылкам/кнопкам внутри карточки
+            if (e.target.closest('a') || e.target.closest('button')) {
+                return;
+            }
+
+            const isExpanded = card.classList.contains('expanded');
+
+            document.querySelectorAll('.service-card.expanded').forEach(openCard => {
+                openCard.classList.remove('expanded');
+            });
+
+            if (!isExpanded) {
+                card.classList.add('expanded');
+                card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
+    });
+
+    // закрываем карточки при клике вне
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.service-card')) {
+            document.querySelectorAll('.service-card.expanded').forEach(openCard => {
+                openCard.classList.remove('expanded');
+            });
+        }
+    });
+}
+
+window.addEventListener('DOMContentLoaded', initServiceCards);
+
 // Анимация схем на роботе
 const circuits = document.querySelectorAll('.robot-circuit');
 circuits.forEach((circuit, index) => {

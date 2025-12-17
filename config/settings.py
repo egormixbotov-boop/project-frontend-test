@@ -147,3 +147,6 @@ CORS_ALLOWED_ORIGINS = config(
     cast=lambda v: [s.strip() for s in v.split(',')]
 )
 
+# Telegram username for contact button
+TELEGRAM_USERNAME = config('TELEGRAM_USERNAME', default='username')
+

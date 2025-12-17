@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'landing/css/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Unbounded:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Фоновые декоративные элементы -->
@@ -26,14 +26,27 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <div class="logo-square"></div>
-                    <span class="logo-text">killsoft</span>
+                    <span class="logo-text">KILLSOFT</span>
                 </div>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#about" class="nav-link">О нас</a></li>
                     <li><a href="#services" class="nav-link">Услуги</a></li>
                     <li><a href="#advantages" class="nav-link">Преимущества</a></li>
+                    <li class="nav-telegram-mobile">
+                        <a href="https://t.me/IT_Ninjas" target="_blank" rel="noopener noreferrer" class="btn-telegram">
+                            <span class="telegram-icon">
+                                <img src="{% static 'landing/images/icons/telegram.svg' %}" alt="Telegram" width="24" height="24">
+                            </span>
+                            <span>Telegram</span>
+                        </a>
+                    </li>
                 </ul>
+                <a href="https://t.me/IT_Ninjas" target="_blank" rel="noopener noreferrer" class="btn-telegram btn-telegram-desktop">
+                    <span class="telegram-icon">
+                        <img src="{% static 'landing/images/icons/telegram.svg' %}" alt="Telegram" width="24" height="24">
+                    </span>
+                    <span>Telegram</span>
+                </a>
                 <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
@@ -119,36 +132,216 @@
     <section id="services" class="section section-services">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Услуги</h2>
+                <h2 class="section-title">Основные услуги</h2>
             </div>
             <div class="services-grid">
+                <!-- Услуга 1 -->
                 <div class="service-card glass-card">
-                    <h3 class="service-title">Услуга 1</h3>
+                    <div class="service-head">
+                        <h3 class="service-title">TG Решение - Быстрый Инвайтинг</h3>
+                        <div class="service-toggle"></div>
+                    </div>
                     <p class="service-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation.
+                        Мгновенное привлечение живой аудитории в Telegram-чаты и группы с помощью проверенной методики и специального ПО.
                     </p>
+                    <div class="service-content">
+                        <ul class="service-features">
+                            <li><strong>Скорость:</strong> До 5 000 участников одновременно</li>
+                            <li><strong>Цена:</strong> от 5 000 руб. (5 руб./чел) при 1 000+ участниках</li>
+                            <li><strong>Безопасность:</strong> Работа только на старых прогретых аккаунтах</li>
+                            <li><strong>Результат:</strong> Быстрый запуск и рост сообщества</li>
+                        </ul>
+                        <div class="service-bonus">
+                            <strong>Бесплатный парсинг базы из:</strong> открытых чатов и групп, по списку писавших в чатах, по комментаторам постов в каналах
+                        </div>
+                        <a class="service-cta btn-telegram" href="https://t.me/IT_Ninjas" target="_blank" rel="noopener noreferrer">
+                            <span class="telegram-icon"><img src="{% static 'landing/images/icons/telegram.svg' %}" alt="Telegram" width="24" height="24"></span>
+                            <span>Написать в Telegram</span>
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Услуга 2 -->
                 <div class="service-card glass-card">
-                    <h3 class="service-title">Услуга 2</h3>
+                    <div class="service-head">
+                        <h3 class="service-title">TG Решение - Медленный Инвайтинг</h3>
+                        <div class="service-toggle"></div>
+                    </div>
                     <p class="service-description">
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident.
+                        Стабильное ежедневное пополнение чата или группы целевой аудиторией с естественной скоростью роста.
                     </p>
+                    <div class="service-content">
+                        <ul class="service-features">
+                            <li><strong>Скорость:</strong> 100-200 участников в день</li>
+                            <li><strong>Цена:</strong> от 5 000 руб. (5 руб./чел)</li>
+                            <li><strong>Результат:</strong> Ежедневный и постепенный рост группы для имитации органического роста</li>
+                            <li><strong>Безопасность:</strong> Минимальный риск блокировок благодаря постепенному пополнению</li>
+                        </ul>
+                        <a class="service-cta btn-telegram" href="https://t.me/IT_Ninjas" target="_blank" rel="noopener noreferrer">
+                            <span class="telegram-icon"><img src="{% static 'landing/images/icons/telegram.svg' %}" alt="Telegram" width="24" height="24"></span>
+                            <span>Написать в Telegram</span>
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Услуга 3 -->
                 <div class="service-card glass-card">
-                    <h3 class="service-title">Услуга 3</h3>
+                    <div class="service-head">
+                        <h3 class="service-title">AI Решение - Нейро-Комментинг</h3>
+                        <div class="service-toggle"></div>
+                    </div>
                     <p class="service-description">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                        totam rem aperiam, eaque ipsa quae ab illo inventore.
+                        Автоматическое комментирование постов целевой аудитории с помощью ИИ для роста доверия, охватов и лидов в Telegram.
                     </p>
+                    <div class="service-content">
+                        <ul class="service-features">
+                            <li><strong>Видимость:</strong> 800-900+ каналов ежемесячно</li>
+                            <li><strong>Работа:</strong> 16 часов в сутки, без выходных</li>
+                            <li><strong>Мощность:</strong> 10 аккаунтов + 10 премиумов (5 основных + 5 на замену)</li>
+                            <li><strong>Автоответчик:</strong> 5 ботов с приветствием и предложением продукта/услуги</li>
+                            <li><strong>Интеграция:</strong> Telegram - 30 дней работы</li>
+                            <li><strong>Оплата:</strong> 25.000₽ (за решение «под ключ»)</li>
+                        </ul>
+                        <div class="service-results">
+                            <strong>Результаты:</strong> Повышение лояльности и доверия к бренду, рост целевого трафика на канал/сайт, генерация лидов с помощью автоответчика, экономия ресурсов маркетинга
+                        </div>
+                        <a class="service-cta btn-telegram" href="https://t.me/IT_Ninjas" target="_blank" rel="noopener noreferrer">
+                            <span class="telegram-icon"><img src="{% static 'landing/images/icons/telegram.svg' %}" alt="Telegram" width="24" height="24"></span>
+                            <span>Написать в Telegram</span>
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Услуга 4 -->
                 <div class="service-card glass-card">
-                    <h3 class="service-title">Услуга 4</h3>
+                    <div class="service-head">
+                        <h3 class="service-title">TG Решение - Масс-Лукинг</h3>
+                        <div class="service-toggle"></div>
+                    </div>
                     <p class="service-description">
-                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos 
-                        qui ratione voluptatem sequi nesciunt.
+                        Автоматизированный массовый просмотр историй целевой аудитории для генерации лидов и продвижения в Telegram.
                     </p>
+                    <div class="service-content">
+                        <ul class="service-features">
+                            <li><strong>Охват:</strong> До 10 000 просмотров в сутки</li>
+                            <li><strong>Режим работы:</strong> 24/7 на автопилоте</li>
+                            <li><strong>Мощность:</strong> 10 аккаунтов (5 основных + 5 на замену) + 10 премиум-подписок</li>
+                            <li><strong>Полный цикл:</strong> 30 дней работы</li>
+                            <li><strong>Интеграции:</strong> Telegram</li>
+                            <li><strong>Оплата:</strong> 25.000₽ (за решение «под ключ»)</li>
+                        </ul>
+                        <div class="service-results">
+                            <strong>Результаты:</strong> Аккаунты видят тысячи потенциальных клиентов ежедневно, вас начинают узнавать, доверять и писать в личные сообщения, продвижение продуктов и услуг через ненавязчивый контакт с ЦА, полная автоматизация процесса 24/7 без вашего участия
+                        </div>
+                        <a class="service-cta btn-telegram" href="https://t.me/IT_Ninjas" target="_blank" rel="noopener noreferrer">
+                            <span class="telegram-icon"><img src="{% static 'landing/images/icons/telegram.svg' %}" alt="Telegram" width="24" height="24"></span>
+                            <span>Написать в Telegram</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Услуга 5 -->
+                <div class="service-card glass-card">
+                    <div class="service-head">
+                        <h3 class="service-title">TG Решение - Масс-отметки в Stories</h3>
+                        <div class="service-toggle"></div>
+                    </div>
+                    <p class="service-description">
+                        Привлечение целевой аудитории через персонализированные упоминания в историях Telegram. Доставка рекламного предложения прямо в личные сообщения.
+                    </p>
+                    <div class="service-content">
+                        <ul class="service-features">
+                            <li><strong>Отметок в сутки:</strong> 250-500</li>
+                            <li><strong>Общий объем:</strong> 3000 отметок за кампанию</li>
+                            <li><strong>Конверсия:</strong> Высокая за счет точечного вовлечения</li>
+                            <li><strong>Формат:</strong> Рекламный креатив в формате истории</li>
+                            <li><strong>Поиск и парсинг базы:</strong> Формируем список целевых пользователей для отметок</li>
+                            <li><strong>Стоимость:</strong> 12.000 руб. за кампанию</li>
+                        </ul>
+                        <div class="service-results">
+                            <strong>Результаты:</strong> Высокая конверсия за счет прямого контакта с заинтересованной аудиторией, рост трафика на ресурс или канал благодаря кликабельным креативам, узнаваемость бренда через персонализированные упоминания, эффективность выше, чем у массовых рассылок и традиционной рекламы
+                        </div>
+                        <a class="service-cta btn-telegram" href="https://t.me/IT_Ninjas" target="_blank" rel="noopener noreferrer">
+                            <span class="telegram-icon"><img src="{% static 'landing/images/icons/telegram.svg' %}" alt="Telegram" width="24" height="24"></span>
+                            <span>Написать в Telegram</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Услуга 6 -->
+                <div class="service-card glass-card">
+                    <div class="service-head">
+                        <h3 class="service-title">AI Решение - Нейро-Лукинг (Instagram)</h3>
+                        <div class="service-toggle"></div>
+                    </div>
+                    <p class="service-description">
+                        Автоматические просмотры историй с AI для роста охватов, просмотров и подписчиков в Instagram.
+                    </p>
+                    <div class="service-content">
+                        <ul class="service-features">
+                            <li><strong>Просмотров STORIES:</strong> до 50.000 в сутки</li>
+                            <li><strong>Реакции на STORIES:</strong> до 1000 лайков в сутки</li>
+                            <li><strong>Увеличение мощности:</strong> на второй месяц</li>
+                            <li><strong>Бот с авто-приветствием:</strong> и предложением продукта/услуги</li>
+                            <li><strong>Интеграции:</strong> Instagram</li>
+                            <li><strong>Оплата:</strong> 19.900₽ (за решение «под ключ»)</li>
+                        </ul>
+                        <div class="service-results">
+                            <strong>Результаты:</strong> Увеличение просмотров историй и реакций на них, привлечение новых подписчиков за счет взаимодействия с целевой аудиторией, рост органического охвата благодаря продвижению постов через алгоритмизацию, поднятие аккаунта в поиске по ключевым словам
+                        </div>
+                        <a class="service-cta btn-telegram" href="https://t.me/IT_Ninjas" target="_blank" rel="noopener noreferrer">
+                            <span class="telegram-icon"><img src="{% static 'landing/images/icons/telegram.svg' %}" alt="Telegram" width="24" height="24"></span>
+                            <span>Написать в Telegram</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Услуга 7 -->
+                <div class="service-card glass-card">
+                    <div class="service-head">
+                        <h3 class="service-title">AI Решение - Аватар+Reels</h3>
+                        <div class="service-toggle"></div>
+                    </div>
+                    <p class="service-description">
+                        30 минутных Reels с вашим цифровым аватаром на самые трендовые экспертные темы.
+                    </p>
+                    <div class="service-content">
+                        <div class="service-packages">
+                            <div class="package-item">
+                                <strong>10 роликов</strong> - 60.000₽
+                            </div>
+                            <div class="package-item">
+                                <strong>15 роликов</strong> - 80.000₽
+                            </div>
+                            <div class="package-item">
+                                <strong>30 роликов</strong> - 120.000₽
+                            </div>
+                        </div>
+                        <div class="service-includes">
+                            <strong>Что входит:</strong> Анализ ЦА и конкурентов, совместное составление стратегии, дословные сценарии с хронометражем, создание 3 Аватаров (в любом из пакетов можем делать до 3 аватаров, если более — с доплатой), монтаж видео (2 круга правок)
+                        </div>
+                        <div class="service-requirements">
+                            <strong>Что нужно от вас:</strong> 3 студийных разговорных видео (горизонтальных или вертикальных) длиной от 3 до 5 минут. Одно видео для каждого Аватара.
+                        </div>
+                        <div class="service-results">
+                            <strong>Результаты:</strong> 30 топовых Reels для экспертного блога, увеличение подписчиков, экономия времени
+                        </div>
+                        <a class="service-cta btn-telegram" href="https://t.me/IT_Ninjas" target="_blank" rel="noopener noreferrer">
+                            <span class="telegram-icon"><img src="{% static 'landing/images/icons/telegram.svg' %}" alt="Telegram" width="24" height="24"></span>
+                            <span>Написать в Telegram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Дополнительные услуги -->
+            <div class="additional-services">
+                <h3 class="additional-title">Дополнительные услуги</h3>
+                <div class="additional-list">
+                    <div class="additional-item glass-card">Создание ИИ-агентов под ключ</div>
+                    <div class="additional-item glass-card">Создание Telegram-ботов</div>
+                    <div class="additional-item glass-card">Создание сайтов</div>
+                    <div class="additional-item glass-card">Оптимизация бизнесов</div>
                 </div>
             </div>
         </div>
