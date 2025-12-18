@@ -742,6 +742,355 @@ body {
     margin-top: 40px;
 }
 
+/* Плашка со скидкой */
+.discount-banner {
+    background: linear-gradient(135deg, rgba(240, 147, 251, 0.15) 0%, rgba(79, 172, 254, 0.15) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(240, 147, 251, 0.3);
+    border-radius: 20px;
+    padding: 24px 32px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.discount-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(240, 147, 251, 0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+.discount-banner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(240, 147, 251, 0.2);
+    border-color: rgba(240, 147, 251, 0.5);
+}
+
+.discount-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.discount-icon {
+    font-size: 3rem;
+    line-height: 1;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.discount-text {
+    flex: 1;
+}
+
+.discount-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    background: var(--gradient-magenta-cyan);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.discount-description {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 6px 0;
+}
+
+.discount-description strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.discount-price {
+    color: var(--neon-cyan);
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.discount-save {
+    color: var(--neon-pink);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.service-with-discount {
+    position: relative;
+}
+
+@keyframes rotate {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(10deg);
+    }
+}
+
+/* Новый формат карточек услуг */
+.services-grid-new {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 60px;
+}
+
+.service-card-new {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: var(--transition-normal);
+    box-shadow: var(--glass-shadow);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+}
+
+.service-card-new::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(240, 147, 251, 0.05) 0%, rgba(79, 172, 254, 0.05) 100%);
+    opacity: 0;
+    transition: var(--transition-normal);
+    z-index: 0;
+}
+
+.service-card-new:hover::before {
+    opacity: 1;
+}
+
+.service-card-new:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.6), 0 0 40px rgba(240, 147, 251, 0.2);
+    border-color: rgba(240, 147, 251, 0.4);
+}
+
+.service-image-placeholder {
+    width: 100%;
+    height: 240px;
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(240, 147, 251, 0.1) 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-image-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.03) 10px,
+            rgba(255, 255, 255, 0.03) 20px
+        );
+    opacity: 0.5;
+}
+
+.service-card-new:hover .service-image-placeholder {
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.15) 0%, rgba(240, 147, 251, 0.15) 100%);
+}
+
+.service-card-body {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.service-title-new {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.3;
+    background: var(--gradient-text-cyan);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: var(--transition-normal);
+}
+
+.service-description-new {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.9;
+    transition: var(--transition-normal);
+}
+
+.service-card-new:hover .service-description-new {
+    opacity: 1;
+}
+
+.service-features-new {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+}
+
+.service-features-new li {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.service-features-new li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--neon-cyan);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.service-features-new li strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.service-results-new,
+.service-includes-new,
+.service-requirements-new {
+    margin-top: 16px;
+    padding: 14px;
+    background: rgba(79, 172, 254, 0.08);
+    border-left: 3px solid var(--neon-cyan);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+.service-results-new strong,
+.service-includes-new strong,
+.service-requirements-new strong {
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.service-packages-new {
+    margin: 16px 0;
+}
+
+.package-item-new {
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    background: rgba(240, 147, 251, 0.1);
+    border-left: 3px solid var(--neon-pink);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.package-item-new strong {
+    color: var(--neon-pink);
+}
+
+.service-card-new:hover .service-title-new {
+    background: var(--gradient-magenta-cyan);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.service-btn-new {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+    color: #000000;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-normal);
+    margin-top: auto;
+    width: 100%;
+}
+
+.service-btn-new:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #ffffff 0%, #ededed 100%);
+}
+
+.service-card-new:hover .service-btn-new {
+    background: var(--gradient-magenta-cyan);
+    color: var(--text-primary);
+    box-shadow: 0 6px 25px rgba(240, 147, 251, 0.4);
+}
+
+.service-card-new:hover .service-btn-new:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(240, 147, 251, 0.6);
+}
+
+.service-card-new:hover .service-btn-new .telegram-icon img {
+    filter: brightness(0) invert(1);
+}
+
 /* Стили для карточек услуг */
 .service-card {
     position: relative;
@@ -1066,6 +1415,35 @@ body {
         padding: 10px 18px;
         font-size: 0.9rem;
     }
+
+    .services-grid-new {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .discount-banner {
+        padding: 20px 24px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    .discount-banner-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .discount-icon {
+        font-size: 2.5rem;
+    }
+
+    .discount-title {
+        font-size: 1.1rem;
+    }
+
+    .discount-description {
+        font-size: 0.95rem;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -1268,6 +1646,47 @@ body {
     .services-grid {
         flex-direction: column;
         gap: 16px;
+    }
+
+    .services-grid-new {
+        gap: 20px;
+        margin-top: 32px;
+    }
+
+    .discount-banner {
+        padding: 16px 20px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    .discount-icon {
+        font-size: 2rem;
+    }
+
+    .discount-title {
+        font-size: 1rem;
+    }
+
+    .discount-description {
+        font-size: 0.9rem;
+    }
+
+    .service-image-placeholder {
+        height: 180px;
+    }
+
+    .service-card-body {
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .service-title-new {
+        font-size: 1.1rem;
+    }
+
+    .service-btn-new {
+        padding: 12px 20px;
+        font-size: 0.9rem;
     }
 
     .service-card {
