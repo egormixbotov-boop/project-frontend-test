@@ -647,6 +647,7 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     position: relative;
     transition: var(--transition-normal);
+    transform: translateX(0);
 }
 
 .team-block:last-child {
@@ -656,7 +657,7 @@ body {
 }
 
 .team-block:hover {
-    padding-left: 20px;
+    transform: translateX(8px);
 }
 
 .team-block-header {
@@ -677,29 +678,23 @@ body {
     background-clip: text;
     display: inline-block;
     position: relative;
-    padding-left: 0;
     transition: var(--transition-normal);
-}
-
-.team-block:hover .team-role {
-    padding-left: 12px;
 }
 
 .team-role::before {
     content: '';
     position: absolute;
-    left: 0;
+    left: -12px;
     top: 50%;
     transform: translateY(-50%);
-    width: 0;
+    width: 8px;
     height: 2px;
     background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
     transition: var(--transition-normal);
-    opacity: 0;
+    opacity: 0.4;
 }
 
 .team-block:hover .team-role::before {
-    width: 8px;
     opacity: 1;
 }
 
@@ -723,6 +718,12 @@ body {
 .team-block-content p {
     margin-bottom: 24px;
     font-size: 1.1rem;
+    opacity: 0.9;
+    transition: var(--transition-normal);
+}
+
+.team-block:hover .team-block-content p {
+    opacity: 1;
 }
 
 .team-block-content p:last-child {
