@@ -34,6 +34,11 @@ navLinks.forEach(link => {
 
 // Плавная прокрутка для якорных ссылок и кнопок
 document.querySelectorAll('a[href^="#"], button').forEach(element => {
+    // Пропускаем кнопки со скидкой
+    if (element.classList.contains('discount-badge')) {
+        return;
+    }
+    
     const href = element.getAttribute('href');
     if (href && href.startsWith('#')) {
         element.addEventListener('click', function (e) {
@@ -150,4 +155,40 @@ circuits.forEach((circuit, index) => {
         circuit.style.opacity = '1';
     }, 1000 + (index * 200));
 });
+
+// Подсветка плашки со скидкой
+function highlightDiscount(event) {
+    // Предотвращаем всплытие события и стандартное поведение
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    const discountBanner = document.getElementById('discountBanner');
+    if (!discountBanner) return;
+
+    // Добавляем класс подсветки
+    discountBanner.classList.add('highlighted');
+
+    // Используем scrollIntoView для надежной прокрутки
+    const navHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+    
+    // Вычисляем отступ с учетом навигации
+    const offset = navHeight + 40;
+    
+    // Получаем текущую позицию скролла
+    const elementPosition = discountBanner.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+    // Прокручиваем с учетом отступа
+    window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: 'smooth'
+    });
+
+    // Убираем подсветку через 3 секунды
+    setTimeout(() => {
+        discountBanner.classList.remove('highlighted');
+    }, 3000);
+}
 

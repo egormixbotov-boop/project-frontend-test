@@ -179,7 +179,7 @@
                 <h2 class="section-title">Основные услуги</h2>
             </div>
             <!-- Плашка со скидкой -->
-            <div class="discount-banner glass-card">
+            <div id="discountBanner" class="discount-banner glass-card">
                 <div class="discount-banner-content">
                     <div class="discount-icon">🎯</div>
                     <div class="discount-text">
@@ -195,6 +195,9 @@
                 <div class="service-card-new glass-card service-with-discount">
                     <div class="service-image-placeholder">
                         <img src="{% static 'landing/images/services/dashboard-preview.jpg' %}" alt="НейроКомментинг" />
+                        <button class="discount-badge" onclick="highlightDiscount(event)" aria-label="Показать скидку" type="button">
+                            <span class="discount-badge-text">Скидка</span>
+                        </button>
                     </div>
                     <div class="service-card-body">
                         <h3 class="service-title-new">Телеграм решение - НейроКомментинг</h3>
@@ -221,6 +224,9 @@
                 <div class="service-card-new glass-card service-with-discount">
                     <div class="service-image-placeholder">
                         <img src="{% static 'landing/images/services/dashboard-preview.jpg' %}" alt="НейроКомментинг" />
+                        <button class="discount-badge" onclick="highlightDiscount(event)" aria-label="Показать скидку" type="button">
+                            <span class="discount-badge-text">Скидка</span>
+                        </button>
                     </div>
                     <div class="service-card-body">
                         <h3 class="service-title-new">Телеграм решение - Масслукинг</h3>
