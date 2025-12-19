@@ -863,6 +863,38 @@ body {
     margin: 0;
 }
 
+.discount-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: var(--gradient-magenta-cyan);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+    transition: var(--transition-normal);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.discount-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(240, 147, 251, 0.6);
+    background: linear-gradient(135deg, rgba(240, 147, 251, 1) 0%, rgba(79, 172, 254, 1) 100%);
+}
+
+.discount-btn:active {
+    transform: translateY(0);
+}
+
+.discount-btn .telegram-icon img {
+    filter: brightness(0) invert(1);
+}
+
 .service-with-discount {
     position: relative;
 }
@@ -1510,6 +1542,12 @@ body {
         font-size: 0.95rem;
     }
 
+    .discount-btn {
+        width: 100%;
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+
     .discount-badge {
         top: 12px;
         right: 12px;
@@ -1744,6 +1782,12 @@ body {
 
     .discount-description {
         font-size: 0.9rem;
+    }
+
+    .discount-btn {
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 0.85rem;
     }
 
     .discount-badge {
